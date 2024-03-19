@@ -1,0 +1,14 @@
+h2 {
+    color: red;
+}
+
+#countlabel {
+    display: block;
+    text-align: center;
+    font-size: 50px;
+    color: #000
+}
+
+#alabel1 {
+    text-align: center;
+}
