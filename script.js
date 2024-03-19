@@ -10,7 +10,7 @@ console.log(A); // we use consol.log print anything we want and we can see that 
 //     // window.alert("I really love pizza");
 //alert and window.alert same thing do same fonctionality display a message on our page
 // dat type : String , numbers , Booleans 
-let present = true;
+// let present = true;
 let FirstName = "Bro"
 let age = 23;
 console.log(present);
