@@ -1,6 +1,6 @@
 // alert("hello js");
 var A = 10;
-console.log(A); // we use consol.log print anything we want and we can see that in console the our page
+// console.log(A); // we use consol.log print anything we want and we can see that in console the our page
 // var person = {
 //     nom: "achraf",
 //     age: "24",
@@ -13,7 +13,7 @@ console.log(A); // we use consol.log print anything we want and we can see that 
 // let present = true;
 let FirstName = "Bro"
 let age = 23;
-console.log(present);
+// console.log(present);
 document.getElementById("p1").innerHTML = "Hello " + FirstName;
 document.getElementById("p2").innerHTML = "you are my  " + FirstName;
 document.getElementById("p3").innerHTML = "you are " + age + " year";
@@ -36,13 +36,14 @@ document.getElementById("mybutton").onclick = function() {
 
     user = document.getElementById("mytext").value;
     if (user == 0) {
-        alert("value empty")
+        // alert("value empty")
+        console.log("it's empty nothing show on your console");
     } else {
         console.log(user);
-        alert(user);
+        // alert(user);
     }
 
-    document.getElementById("alabel1").innerHTML = user;
+    // document.getElementById("alabel1").innerHTML = user;
 }
 
 //type conversion : change the datatype of a value to another
@@ -1270,3 +1271,70 @@ date.setMilliseconds(0);
 
 //     return `${Hour}:${Minute}:${Seconds} ${amorpm}`
 // }
+
+
+//new ode on js
+let x = "55";
+// console.log(x, typeof(x))
+let y = Number(x);
+// let a = "6";
+// let b = Number(a);
+// console.log(y, typeof(y));
+let radius = 5;
+const PI = 3.14;
+radius = Number(radius);
+let circleference = PI * radius * radius;
+// console.log(circleference);
+
+// use Math function
+// max, min , flor , ceil, round 
+let c = 1.20;
+let d = Math.ceil(c);
+// console.log(d);
+
+// program using html and DOM code
+let count = 0;
+document.getElementById("decrease").onclick = function() {
+    count -= 1;
+    document.getElementById("countlabel").innerHTML = count;
+}
+document.getElementById("reset").onclick = function() {
+    count = 0;
+    document.getElementById("countlabel").innerHTML = count;
+}
+document.getElementById("increase").onclick = function() {
+    count += 1;
+    document.getElementById("countlabel").innerHTML = count;
+}
+
+// random value
+// value between 0 and 1
+let value = Math.random();
+// console.log(value);
+// value between 0 and n
+let z = Math.random() * 6;
+// console.log(z);
+// value between 0 and 6 but not vergule
+let f = Math.floor(Math.random() * 6);
+// console.log(f);
+
+// now trying practice this methode by usinf DOM
+let number1;
+let number2;
+let number3;
+// document.getElementById("mybutton").onclick = function() {
+//     number1 = Math.floor(Math.random() * 6);
+//     number2 = Math.floor(Math.random() * 6);
+//     number3 = Math.floor(Math.random() * 6);
+
+//     document.getElementById("alabel").innerHTML = number1;
+//     document.getElementById("blabel").innerHTML = number2;
+//     document.getElementById("clabel").innerHTML = number3;
+// }
+
+// String Methods
+// slice methods
+let full_name = "achraf-bogryn";
+let firstname = full_name.slice(7);
+console.log("this is full name", full_name);
+console.log("this is last name ", firstname);
