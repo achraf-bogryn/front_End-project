@@ -292,7 +292,7 @@ console.log("Side C : ",c);
 //     console.log(i);
 // }
 
-// nested loop = a loop of another loop
+// nested loop = a loop in another loop
 // let symbol = window.prompt("enter a symbole");
 // let rows =window.prompt("enter number of rows");
 // let column = window.prompt("enter number of column");
@@ -1319,9 +1319,9 @@ let f = Math.floor(Math.random() * 6);
 // console.log(f);
 
 // now trying practice this methode by usinf DOM
-let number1;
-let number2;
-let number3;
+// let number1;
+// let number2;
+// let number3;
 // document.getElementById("mybutton").onclick = function() {
 //     number1 = Math.floor(Math.random() * 6);
 //     number2 = Math.floor(Math.random() * 6);
@@ -1336,5 +1336,33 @@ let number3;
 // slice methods
 let full_name = "achraf-bogryn";
 let firstname = full_name.slice(7);
-console.log("this is full name", full_name);
-console.log("this is last name ", firstname);
+// console.log("this is full name", full_name);
+// console.log("this is last name ", firstname);
+
+// Number Guessing GAME
+const min = 1;
+const max = 100;
+const answer = Math.floor(Math.random() * (max - min + 1) + min)
+    // console.log(answer)
+let tmp = 0;
+let guess;
+let running = true;
+while (running) {
+    guess = window.prompt(`Guess a number between ${max}-${min}`);
+    guess = Number(guess);
+    if (isNaN(guess)) {
+        window.alert("please enter a valid number");
+    } else if (guess > max || guess < min) {
+        window.alert("your guess must be between 1 and 100");
+    } else {
+        tmp++;
+        if (guess < answer) {
+            window.alert("To low try again");
+        } else if (guess > answer) {
+            window.alert("  To High Try again")
+        } else {
+            window.alert(`congralution , the answer was ${guess}. it's took you ${tmp}`);
+            running = false;
+        }
+    }
+}
