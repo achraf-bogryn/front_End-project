@@ -1342,27 +1342,47 @@ let firstname = full_name.slice(7);
 // Number Guessing GAME
 const min = 1;
 const max = 100;
-const answer = Math.floor(Math.random() * (max - min + 1) + min)
-    // console.log(answer)
+// const answer = Math.floor(Math.random() * (max - min + 1) + min)
+// console.log(answer)
 let tmp = 0;
 let guess;
 let running = true;
-while (running) {
-    guess = window.prompt(`Guess a number between ${max}-${min}`);
-    guess = Number(guess);
-    if (isNaN(guess)) {
-        window.alert("please enter a valid number");
-    } else if (guess > max || guess < min) {
-        window.alert("your guess must be between 1 and 100");
-    } else {
-        tmp++;
-        if (guess < answer) {
-            window.alert("To low try again");
-        } else if (guess > answer) {
-            window.alert("  To High Try again")
-        } else {
-            window.alert(`congralution , the answer was ${guess}. it's took you ${tmp}`);
-            running = false;
-        }
+// while (running) {
+//     guess = window.prompt(`Guess a number between ${max}-${min}`);
+//     guess = Number(guess);
+//     if (isNaN(guess)) {
+//         window.alert("please enter a valid number");
+//     } else if (guess > max || guess < min) {
+//         window.alert("your guess must be between 1 and 100");
+//     } else {
+//         tmp++;
+//         if (guess < answer) {
+//             window.alert("To low try again");
+//         } else if (guess > answer) {
+//             window.alert("  To High Try again")
+//         } else {
+//             window.alert(`congralution , the answer was ${guess}. it's took you ${tmp}`);
+//             running = false;
+//         }
+//     }
+// }
+
+
+// Dice Roller Program
+function rollDice() {
+    const numOfDice = document.getElementById('numOfDice').value;
+    const diceResult = document.getElementById("diceResult");
+    const diceImages = document.getElementById("diceImages")
+    const values = [];
+    const images = [];
+
+    for (let i = 0; i < numOfDice; i++) {
+        const value = Math.floor(Math.random() * 6) + 1;
+        // console.log(value);
+        values.push(value);
+        images.push(`<img src="img/${value}.png" alt='Dice ${value}'>`);
     }
+    // console.log(values);
+    diceResult.textContent = `dice: ${value.join(', ')}`;
+    diceImages.innerHTML = images.join('');
 }
