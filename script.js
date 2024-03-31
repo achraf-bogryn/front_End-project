@@ -1456,8 +1456,131 @@ function displaycontent(a) {
 
 // sum(6, 6, displaycontent);
 
+// FoEach methode
+// array.forEach() = axecutes a provided callback function 
+//    once for each array element
+// element index , array are provided
+
+let numbers = [1, 2, 3, 4, 5];
+let arrayDouble = [];
 
 
-// let students = ["achraf", "hamza", "yassine"];
-// students.forEach(capitalize);
-// students.forEach(print);
+// numbers.forEach(display);
+// console.log("double");
+numbers.forEach(double);
+// console.log(arrayDouble)
+
+function display(element) {
+    console.log(element);
+}
+
+function double(element, index, array) {
+    arrayDouble[index] = element * 2;
+    // console.log(element);
+}
+
+// map() : accept a callback abd applies function
+// to each element and return a new array 
+const student = ['achraf', 'hafsa', 'ayoub'];
+const newArray = student.map(upperCase);
+// console.log(newArray);
+const Dates = ['2022-11-09', '2023-10-04', '2023-09-28'];
+const newFormat = Dates.map(dateFormat);
+// console.log(newFormat);
+
+function dateFormat(element) {
+    const part = element.split("-");
+    return `${part[1]}/${part[2]}/${part[0]}`
+}
+
+// filter() : creates a new array by filtering out element 
+
+let digits = [1, 2, 3, 4, 5, 6, 7, 8];
+let eventNumb = digits.filter(isEvenet)
+let isOddNumbber = digits.filter(isODD);
+// console.log(eventNumb);
+// console.log(isOddNumbber);
+
+function isEvenet(element) {
+    return element % 2 === 0;
+}
+
+function isODD(element) {
+    return element % 2 !== 0;
+}
+
+
+
+function upperCase(element) {
+    return element.toUpperCase();
+}
+
+
+
+
+const number = [1, 2, 3, 4, 5];
+
+
+function square(element) {
+    return Math.pow(element, 2)
+}
+
+const suareNumber = number.map(square);
+
+
+// reduce() : reduce the elements of an array to a single value
+
+const prices = [5, 30, 10, 25, 15];
+const total = price.reduce(sum);
+// console.log(`total is $${total}`);
+// I want two number after vergule
+// console.log(`total is $${total.toFixed(2)}`);
+
+function sum(previus, next) {
+    return previus + next;
+}
+
+const grades = [15, 25, 10, 65, 60, 78, 25];
+const maxNumber = grades.reduce(getMax);
+const minNumber = grades.reduce(getMin);
+
+// console.log(`max in the table grades is ${maxNumber}`);
+// console.log(`min in the table grades is ${minNumber}`);
+
+function getMax(accumlator, element) {
+    return Math.max(accumlator, element);
+}
+
+function getMin(accumlator, element) {
+    return Math.min(accumlator, element);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// console.log(`square numbers the array number is  ${suareNumber}`)
