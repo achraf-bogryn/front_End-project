@@ -1369,20 +1369,79 @@ let running = true;
 
 
 // Dice Roller Program
-function rollDice() {
-    const numOfDice = document.getElementById('numOfDice').value;
-    const diceResult = document.getElementById("diceResult");
-    const diceImages = document.getElementById("diceImages")
-    const values = [];
-    const images = [];
 
-    for (let i = 0; i < numOfDice; i++) {
-        const value = Math.floor(Math.random() * 6) + 1;
-        // console.log(value);
-        values.push(value);
-        images.push(`<img src="img/${value}.png" alt='Dice ${value}'>`);
+// function rollDice() {
+//     const numOfDice = document.getElementById('numOfDice').value;
+//     const diceResult = document.getElementById("diceResult");
+//     const diceImages = document.getElementById("diceImages")
+//     const values = [];
+//     const images = [];
+
+//     for (let i = 0; i < numOfDice; i++) {
+//         const value = Math.floor(Math.random() * 6) + 1;
+//         // console.log(value);
+//         values.push(value);
+//         images.push(`<img src="img/${value}.png" alt='Dice ${value}'>`);
+//     }
+//     // console.log(values);
+//     diceResult.textContent = `dice: ${value.join(', ')}`;
+//     diceImages.innerHTML = images.join('');
+// }
+
+// Rnadom PASSWORD GENERATOR
+
+function generatePassword(length, includeToLowerCase, includeToUpperCase, includeNumbers, includeSymbols) {
+    const lowerCaseChars = "abcdefghijklmnopkrstuvwz";
+    const uppercaseChars = "ABCDEFGHIJKLMNOPKRSTUVWZ";
+    const numberChars = "0123456789";
+    const symbleChars = "!@#$^&*()_-+=";
+
+    let allowdChars = "";
+    let password = "";
+    allowdChars += includeToLowerCase ? lowerCaseChars : "";
+    allowdChars += includeToUpperCase ? uppercaseChars : "";
+    allowdChars += includeNumbers ? numberChars : "";
+    allowdChars += includeSymbols ? symbleChars : "";
+
+    if (length <= 0) {
+        return `(password must be at least 1)`;
     }
-    // console.log(values);
-    diceResult.textContent = `dice: ${value.join(', ')}`;
-    diceImages.innerHTML = images.join('');
+
+    if (allowdChars.length === 0) {
+        return `(at least 1 set of character needs to be select )`;
+    }
+
+    for (let i; i < length; i++) {
+        let randomIndex = Math.floor(Math.random() * allowdChars.length);
+        password += allowdChars[randomIndex];
+    }
+
+
+
+    // console.log(allowdChars);
+    // console.log(password);
+
+
+
+    return password;
 }
+
+const passwordLength = 12;
+const includeToLowerCase = true;
+const includeToUpperCase = true;
+const includeNumbers = true;
+const includeSymbols = true;
+
+const password = generatePassword(passwordLength,
+    includeToLowerCase,
+    includeToUpperCase,
+    includeNumbers,
+    includeSymbols);
+console.log(`Generated password : ${password}`);
+
+
+
+
+// let students = ["achraf", "hamza", "yassine"];
+// students.forEach(capitalize);
+// students.forEach(print);
