@@ -1437,8 +1437,24 @@ const password = generatePassword(passwordLength,
     includeToUpperCase,
     includeNumbers,
     includeSymbols);
-console.log(`Generated password : ${password}`);
+// console.log(`Generated password : ${password}`);
 
+// Callback
+
+function sum(a, b, fun) {
+    let result = a + b;
+    fun(result);
+}
+
+function displayResult(a) {
+    console.log(a);
+}
+
+function displaycontent(a) {
+    document.getElementById("myh2").textContent = a;
+}
+
+// sum(6, 6, displaycontent);
 
 
 
