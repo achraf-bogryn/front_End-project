@@ -1569,10 +1569,53 @@ const Hello = (name) => console.log(`hello ${name}`);
 // ES6 Module : An external file that contains code 
 // that can be imported into other javascript file.
 // write reusable code for many different apps
+
+
 // import { PI, getCircumReference, getArea, getVolume } from './mathUtil.js';
 // console.log(PI);
 // const circumference = getCircumReference(10);
 // console.log(`reference ${circumference.toFixed(2)}cm `);
+
+// Error : An object is created to represent a probelm that occurs
+//  Occur afterm with user input
+
+// try {}: enclose code that might potentially cause an error
+// catch {} : Catch amd handle any throw Errors from try {}
+// finally {} : (optional) always executes .use mostly for clean up
+// ex : close filter , close connection , realease ressources
+
+// try {
+//     console.log(a);
+//     // Network errors
+//     // PROMISE Rejection
+//     // SECURITY ERRORS
+// } catch (error) {
+//     console.error(error)
+// } finally {
+//     console.log("this always executed");
+//     // Close files
+//     // close onnection
+//     // RElease ressources
+// }
+
+try {
+    let divided = window.prompt("enter a number");
+    divided = Number(divided);
+    let divisor = window.prompt("enter a value ");
+    divisor = Number(divisor);
+    if (divisor == 0) {
+        throw new Error(`you can't divide by zero!`);
+    }
+    if (isNaN(divided) || isNaN(divisor)) {
+        throw new Error(`value must be a number`);
+    }
+
+    let result = divided / divisor;
+    console.log(result);
+} catch (error) {
+    console.error(error);
+}
+console.log("you have raeched the end !");
 
 
 
