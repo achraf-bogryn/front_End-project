@@ -1555,6 +1555,28 @@ function getMin(accumlator, element) {
     return Math.min(accumlator, element);
 }
 
+// Arrow function : a concicse way to write function expressions
+//  good for simple functions that you use only once (parameters)
+//  => some code
+
+// function hello(){
+// console.log("hello")
+// }
+
+const Hello = (name) => console.log(`hello ${name}`);
+// Hello('achraf');
+
+// ES6 Module : An external file that contains code 
+// that can be imported into other javascript file.
+// write reusable code for many different apps
+// import { PI, getCircumReference, getArea, getVolume } from './mathUtil.js';
+// console.log(PI);
+// const circumference = getCircumReference(10);
+// console.log(`reference ${circumference.toFixed(2)}cm `);
+
+
+
+
 
 
 
