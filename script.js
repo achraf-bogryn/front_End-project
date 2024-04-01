@@ -16,7 +16,7 @@ let age = 23;
 // console.log(present);
 document.getElementById("p1").innerHTML = "Hello " + FirstName;
 document.getElementById("p2").innerHTML = "you are my  " + FirstName;
-document.getElementById("p3").innerHTML = "you are " + age + " year";
+// document.getElementById("p3").innerHTML = "you are " + age + " year";
 // // opertator arithemetic
 // student = 20;
 // student +=1;
@@ -1598,28 +1598,80 @@ const Hello = (name) => console.log(`hello ${name}`);
 //     // RElease ressources
 // }
 
-try {
-    let divided = window.prompt("enter a number");
-    divided = Number(divided);
-    let divisor = window.prompt("enter a value ");
-    divisor = Number(divisor);
-    if (divisor == 0) {
-        throw new Error(`you can't divide by zero!`);
-    }
-    if (isNaN(divided) || isNaN(divisor)) {
-        throw new Error(`value must be a number`);
-    }
+// try {
+//     let divided = window.prompt("enter a number");
+//     divided = Number(divided);
+//     let divisor = window.prompt("enter a value ");
+//     divisor = Number(divisor);
+//     if (divisor == 0) {
+//         throw new Error(`you can't divide by zero!`);
+//     }
+//     if (isNaN(divided) || isNaN(divisor)) {
+//         throw new Error(`value must be a number`);
+//     }
 
-    let result = divided / divisor;
-    console.log(result);
-} catch (error) {
-    console.error(error);
-}
-console.log("you have raeched the end !");
+//     let result = divided / divisor;
+//     console.log(result);
+// } catch (error) {
+//     console.error(error);
+// }
+// console.log("you have raeched the end !");
 
+// Document object Module
+// document.title = "my web page";
+// const userName = " my name";
+// const pageContent = document.getElementById("p");
+// pageContent.textContent += userName;
+// document.body.style.backgroundColor = "hsl(0,0%,15%)";
 
+// element selector : methode used to target and manipulation
+// HTML element they allow you to select one or multiple 
+// element from the DOM
 
+// document.getElementById() : IF ID not existe retur NULL
+// document.getElementsByClassName(): HTML collections\
+// document.getElementsByTagName(): HTML collection
+// document.querySelector() :First element  OR NULL
+// document.querySelectorAll : MODELIST
 
+const heading = document.getElementById("my-heading");
+heading.style.backgroundColor = "red";
+heading.style.textAlign = "center";
+// console.log(heading);
+
+const fruits = document.getElementsByClassName("fruits");
+console.log(fruits);
+// fruits[0].style.backgroundColor = "yellow";
+// fruits[1].style.backgroundColor = "green";
+// fruits[2].style.backgroundColor = "red";
+
+Array.from(fruits).forEach(fruit => {
+    fruit.style.backgroundColor = "yellow"
+});
+
+const h4Element = document.getElementsByTagName("h4");
+const liElement = document.getElementsByTagName("li");
+console.log(h4Element);
+// h4Element[0].style.backgroundColor = "green";
+Array.from(h4Element).forEach(h4Element => {
+    h4Element.style.backgroundColor = "yellow";
+});
+
+Array.from(liElement).forEach(liElement => {
+    liElement.style.backgroundColor = "lightgreen";
+})
+
+const element = document.querySelector(".fruits");
+element.style.backgroundColor = "red";
+
+const elemnetLI = document.querySelector("li");
+elemnetLI.style.backgroundColor = "red";
+
+const elementAll = document.querySelectorAll("li");
+// elementAll[2].style.backgroundColor = "red";
+elementAll.forEach(items => {
+    items.style.backgroundColor = "red";
+});
 
 
 
