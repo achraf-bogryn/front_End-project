@@ -91,3 +91,21 @@ input {
 #mybutton {
     font-size: 3rem;
 }
+
+body {
+    margin: 0;
+    /* padding: 0; */
+}
+
+#events {
+    /* border: 3px solid; */
+    /* padding: 5px; */
+    background-color: lightblue;
+    width: 200px;
+    height: 200px;
+    font-size: 4.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}

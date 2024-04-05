@@ -1777,8 +1777,8 @@ newListItem.style.backgroundColor = "lightgreen";
 // web pages events: click , mouseover , mouseout , 
 // addEventlistener(event , callback);
 
-const mybox = document.getElementById("mybox");
-const mybutton = document.getElementById("mybutton");
+// const mybox = document.getElementById("mybox");
+// const mybutton = document.getElementById("mybutton");
 
 // function changelCoor(event) {
 //     event.target.style.backgroundColor = "red";
@@ -1791,14 +1791,14 @@ const mybutton = document.getElementById("mybutton");
 
 // });
 
-mybutton.addEventListener("click", function(event) {
-    // event.target.style.backgroundColor = "blue";
-    mybox.style.backgroundColor = "red";
-    mybox.style.color = "blue";
-    // event.target.style.textContent = "Don't Do it";
-    // event.target.style.color = "green";
+// mybutton.addEventListener("click", function(event) {
+//     // event.target.style.backgroundColor = "blue";
+//     mybox.style.backgroundColor = "red";
+//     mybox.style.color = "blue";
+//     // event.target.style.textContent = "Don't Do it";
+//     // event.target.style.color = "green";
 
-});
+// });
 
 // mybox.addEventListener("mouseover", function(event) {
 //     event.target.style.backgroundColor = "yellow";
@@ -1808,15 +1808,15 @@ mybutton.addEventListener("click", function(event) {
 // });
 
 
-mybutton.addEventListener("mouseover", function(event) {
-    // event.target.style.backgroundColor = "red";
-    // event.target.style.textContent = "Don't Do it";
-    // event.target.style.color = "blue";
-    mybox.style.backgroundColor = "green";
-    mybox.color.color = "dark";
+// mybutton.addEventListener("mouseover", function(event) {
+//     // event.target.style.backgroundColor = "red";
+//     // event.target.style.textContent = "Don't Do it";
+//     // event.target.style.color = "blue";
+//     mybox.style.backgroundColor = "green";
+//     mybox.color.color = "dark";
 
 
-});
+// });
 
 // mybox.addEventListener("mouseout", function(event) {
 //     event.target.style.backgroundColor = "lightgreen";
@@ -1825,14 +1825,76 @@ mybutton.addEventListener("mouseover", function(event) {
 
 // })
 
-mybutton.addEventListener("mouseout", function(event) {
-    // event.target.style.backgroundColor = "orange";
-    // event.target.style.textContent = "Don't Do it";
-    // event.target.style.color = "green";
-    mybox.style.backgroundColor = "orange";
-    mybox.style.color = "lightgreen";
+// mybutton.addEventListener("mouseout", function(event) {
+//     // event.target.style.backgroundColor = "orange";
+//     // event.target.style.textContent = "Don't Do it";
+//     // event.target.style.color = "green";
+//     mybox.style.backgroundColor = "orange";
+//     mybox.style.color = "lightgreen";
 
-})
+// })
+
+// Key events
+// eventsListener = listen for specific events to create interactive
+// web pages events : keydown , keyup,,document.addEventListener(event,callback)
+// __________________________________________________________
+// 
+// 
+// document.addEventListener("keydown", (event) => {
+//     console.log(`key Down = ${event.key}`);
+// });
+
+// document.addEventListener("keyup", (event) => {
+//     console.log(`key Up = ${event.key}`);
+// });
+
+const mybox = document.getElementById("events");
+const moyeAmount = 10;
+let x1 = 0;
+let y2 = 0;
+
+document.addEventListener("keydown", evenet => {
+    mybox.textContent = "H";
+    mybox.style.backgroundColor = "red";
+});
+
+document.addEventListener("keyup", evenet => {
+    mybox.textContent = "Mybox";
+    mybox.style.backgroundColor = "lightblue";
+});
+
+document.addEventListener("keydown", event => {
+    // console.log(event.key);
+    if (event.key.startsWith("Arrow")) {
+
+        event.preventDefault();
+
+        switch (event.key) {
+            case "ArrowUp":
+                y2 -= moyeAmount;
+                break;
+            case "ArrowDown":
+                y2 += moyeAmount;
+                break;
+            case "ArrowLeft":
+                x1 -= moyeAmount;
+                break;
+            case "ArrowRight":
+                x1 += moyeAmount;
+                break;
+        }
+
+        mybox.style.top = `${y2}px`;
+        // mybox.style.bottom = `${y2}px`;
+        mybox.style.left = `${x1}px`;
+        // mybox.style.right = `${x1}px`;
+
+    }
+
+
+});
+
+
 
 
 
