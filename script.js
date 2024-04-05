@@ -11,11 +11,11 @@ var A = 10;
 //alert and window.alert same thing do same fonctionality display a message on our page
 // dat type : String , numbers , Booleans 
 // let present = true;
-let FirstName = "Bro"
-let age = 23;
+// let FirstName = "Bro"
+// let age = 23;
 // console.log(present);
-document.getElementById("p1").innerHTML = "Hello " + FirstName;
-document.getElementById("p2").innerHTML = "you are my  " + FirstName;
+// document.getElementById("p1").innerHTML = "Hello " + FirstName;
+// document.getElementById("p2").innerHTML = "you are my  " + FirstName;
 // document.getElementById("p3").innerHTML = "you are " + age + " year";
 // // opertator arithemetic
 // student = 20;
@@ -31,20 +31,20 @@ document.getElementById("p2").innerHTML = "you are my  " + FirstName;
 // let username = window.prompt("What's your name");
 // console.log(username);
 //2-Diffucult way with HTML textbox
-let user;
-document.getElementById("mybutton").onclick = function() {
+// let user;
+// document.getElementById("mybutton").onclick = function() {
 
-    user = document.getElementById("mytext").value;
-    if (user == 0) {
-        // alert("value empty")
-        console.log("it's empty nothing show on your console");
-    } else {
-        console.log(user);
-        // alert(user);
-    }
+// user = document.getElementById("mytext").value;
+// if (user == 0) {
+//     // alert("value empty")
+//     console.log("it's empty nothing show on your console");
+// } else {
+//     console.log(user);
+//     // alert(user);
+// }
 
-    // document.getElementById("alabel1").innerHTML = user;
-}
+// document.getElementById("alabel1").innerHTML = user;
+// }
 
 //type conversion : change the datatype of a value to another
 //    (Strings , numbers ,Booleans)
@@ -1280,32 +1280,32 @@ let y = Number(x);
 // let a = "6";
 // let b = Number(a);
 // console.log(y, typeof(y));
-let radius = 5;
-const PI = 3.14;
-radius = Number(radius);
-let circleference = PI * radius * radius;
-// console.log(circleference);
+// let radius = 5;
+// const PI = 3.14;
+// radius = Number(radius);
+// let circleference = PI * radius * radius;
+// // console.log(circleference);
 
 // use Math function
 // max, min , flor , ceil, round 
-let c = 1.20;
-let d = Math.ceil(c);
+// let c = 1.20;
+// let d = Math.ceil(c);
 // console.log(d);
 
 // program using html and DOM code
-let count = 0;
-document.getElementById("decrease").onclick = function() {
-    count -= 1;
-    document.getElementById("countlabel").innerHTML = count;
-}
-document.getElementById("reset").onclick = function() {
-    count = 0;
-    document.getElementById("countlabel").innerHTML = count;
-}
-document.getElementById("increase").onclick = function() {
-    count += 1;
-    document.getElementById("countlabel").innerHTML = count;
-}
+// let count = 0;
+// document.getElementById("decrease").onclick = function() {
+// count -= 1;
+// document.getElementById("countlabel").innerHTML = count;
+// }
+// document.getElementById("reset").onclick = function() {
+// count = 0;
+// document.getElementById("countlabel").innerHTML = count;
+// }
+// document.getElementById("increase").onclick = function() {
+// count += 1;
+// document.getElementById("countlabel").innerHTML = count;
+// }
 
 // random value
 // value between 0 and 1
@@ -1705,27 +1705,27 @@ lElement.forEach(i => {
 })
 
 // _____________________.nextElemetSibling__________________
-const element = document.getElementById("vegetab");
-const nextSibing = element.nextElementSibling;
+const element1 = document.getElementById("vegetab");
+// const nextSibing = element1.nextElementSibling;
 // nextSibing.style.backgroundColor = "green";
 
 // _________________.previousElementSibling_______________
 const previous = document.getElementById("vegetab");
-const previousElement = previous.previousElementSibling;
+// const previousElement = previous.previousElementSibling;
 // previousElement.style.backgroundColor = "yellow";
 
 const previousn = document.getElementById("desserts");
-const desserts = previousn.previousElementSibling;
+// const desserts = previousn.previousElementSibling;
 // desserts.style.backgroundColor = "red";
 
 // ____________________.parentElement______________________
 const parentElement = document.getElementById("cake");
-const parent = parentElement.parentElement;
+// const parent = parentElement.parentElement;
 // parent.style.backgroundColor = "yellow";
 // _________________________.children_____________________
 const Celement = document.getElementById("fruits");
-const children = Celement.children;
-console.log(children);
+// const children = Celement.children;
+// console.log(children);
 
 // Array.from(children).forEach(child => {
 //         child.style.backgroundColor = "red";
@@ -1772,8 +1772,67 @@ newListItem.style.backgroundColor = "lightgreen";
 
 
 
+// Mouse Events 
+// EventListener : listen for specific events to create interactive 
+// web pages events: click , mouseover , mouseout , 
+// addEventlistener(event , callback);
+
+const mybox = document.getElementById("mybox");
+const mybutton = document.getElementById("mybutton");
+
+// function changelCoor(event) {
+//     event.target.style.backgroundColor = "red";
+//     event.target.style.textContent = "OUCH";
+// }
+// mybox.addEventListener("click", function(event) {
+//     event.target.style.backgroundColor = "red";
+//     // event.target.style.textContent = "Don't Do it";
+//     event.target.style.color = "green";
+
+// });
+
+mybutton.addEventListener("click", function(event) {
+    // event.target.style.backgroundColor = "blue";
+    mybox.style.backgroundColor = "red";
+    mybox.style.color = "blue";
+    // event.target.style.textContent = "Don't Do it";
+    // event.target.style.color = "green";
+
+});
+
+// mybox.addEventListener("mouseover", function(event) {
+//     event.target.style.backgroundColor = "yellow";
+//     // event.target.style.textContent = "Don't Do it";
+//     event.target.style.color = "blue";
+
+// });
 
 
+mybutton.addEventListener("mouseover", function(event) {
+    // event.target.style.backgroundColor = "red";
+    // event.target.style.textContent = "Don't Do it";
+    // event.target.style.color = "blue";
+    mybox.style.backgroundColor = "green";
+    mybox.color.color = "dark";
+
+
+});
+
+// mybox.addEventListener("mouseout", function(event) {
+//     event.target.style.backgroundColor = "lightgreen";
+//     // event.target.style.textContent = "Don't Do it";
+//     // event.target.style.color = "green";
+
+// })
+
+mybutton.addEventListener("mouseout", function(event) {
+    // event.target.style.backgroundColor = "orange";
+    // event.target.style.textContent = "Don't Do it";
+    // event.target.style.color = "green";
+    mybox.style.backgroundColor = "orange";
+    mybox.style.color = "lightgreen";
+
+})
 
 
 
