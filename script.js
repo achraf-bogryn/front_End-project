@@ -1735,21 +1735,21 @@ const Celement = document.getElementById("fruits");
 // Add & change HTML Element : 
 // STEP 1 : CREATE ELEMENT 
 // __________________________________________________________
-const H1 = document.createElement("h1");
+// const H1 = document.createElement("h1");
 // add js code on ordered list 
-const newListItem = document.createElement("li");
+// const newListItem = document.createElement("li");
 
 // STEP 2 : ADD ATTRIBUTES/PROPERTIES
 // ____________________________________________________
-H1.textContent = "I like pizza";
-H1.id = "myH1";
-H1.style.backgroundColor = "red";
-H1.style.textAlign = "center";
-// applied on list 
-newListItem.textContent = "coconut";
-newListItem.id = "coconut";
-newListItem.style.fontWeight = "bold";
-newListItem.style.backgroundColor = "lightgreen";
+// H1.textContent = "I like pizza";
+// H1.id = "myH1";
+// H1.style.backgroundColor = "red";
+// H1.style.textAlign = "center";
+// // applied on list 
+// newListItem.textContent = "coconut";
+// newListItem.id = "coconut";
+// newListItem.style.fontWeight = "bold";
+// newListItem.style.backgroundColor = "lightgreen";
 
 
 
@@ -1848,51 +1848,75 @@ newListItem.style.backgroundColor = "lightgreen";
 //     console.log(`key Up = ${event.key}`);
 // });
 
-const mybox = document.getElementById("events");
-const moyeAmount = 10;
-let x1 = 0;
-let y2 = 0;
+// const mybox = document.getElementById("events");
+// const moyeAmount = 10;
+// let x1 = 0;
+// let y2 = 0;
 
-document.addEventListener("keydown", evenet => {
-    mybox.textContent = "H";
-    mybox.style.backgroundColor = "red";
-});
+// document.addEventListener("keydown", evenet => {
+//     mybox.textContent = "H";
+//     mybox.style.backgroundColor = "red";
+// });
 
-document.addEventListener("keyup", evenet => {
-    mybox.textContent = "Mybox";
-    mybox.style.backgroundColor = "lightblue";
-});
+// document.addEventListener("keyup", evenet => {
+//     mybox.textContent = "Mybox";
+//     mybox.style.backgroundColor = "lightblue";
+// });
 
-document.addEventListener("keydown", event => {
-    // console.log(event.key);
-    if (event.key.startsWith("Arrow")) {
+// document.addEventListener("keydown", event => {
+//     // console.log(event.key);
+//     if (event.key.startsWith("Arrow")) {
 
-        event.preventDefault();
+//         event.preventDefault();
 
-        switch (event.key) {
-            case "ArrowUp":
-                y2 -= moyeAmount;
-                break;
-            case "ArrowDown":
-                y2 += moyeAmount;
-                break;
-            case "ArrowLeft":
-                x1 -= moyeAmount;
-                break;
-            case "ArrowRight":
-                x1 += moyeAmount;
-                break;
-        }
+//         switch (event.key) {
+//             case "ArrowUp":
+//                 y2 -= moyeAmount;
+//                 break;
+//             case "ArrowDown":
+//                 y2 += moyeAmount;
+//                 break;
+//             case "ArrowLeft":
+//                 x1 -= moyeAmount;
+//                 break;
+//             case "ArrowRight":
+//                 x1 += moyeAmount;
+//                 break;
+//         }
 
-        mybox.style.top = `${y2}px`;
-        // mybox.style.bottom = `${y2}px`;
-        mybox.style.left = `${x1}px`;
-        // mybox.style.right = `${x1}px`;
+//         mybox.style.top = `${y2}px`;
+//         // mybox.style.bottom = `${y2}px`;
+//         mybox.style.left = `${x1}px`;
+//         // mybox.style.right = `${x1}px`;
 
+//     }
+
+
+// });
+
+// Hide/show HTML
+const myButton = document.getElementById("button");
+const myImg = document.getElementById("myImg");
+
+myButton.addEventListener("click", event => {
+    // if (myImg.style.display === "none") {
+    //     myImg.style.display = "block";
+    //     myButton.textContent = "Hide";
+    // } else {
+    //     myImg.style.display = "none";
+    //     myButton.textContent = "Show"
+    // }
+
+    if (myImg.style.visibility === "hidden") {
+        myImg.style.display = "visible";
+        myButton.textContent = "Hide";
+    } else {
+        myImg.style.visibility = "hidden";
+        myButton.textContent = "Show"
     }
 
-
 });
+
 
 
 
