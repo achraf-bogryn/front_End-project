@@ -1721,16 +1721,56 @@ const desserts = previousn.previousElementSibling;
 // ____________________.parentElement______________________
 const parentElement = document.getElementById("cake");
 const parent = parentElement.parentElement;
-parent.style.backgroundColor = "yellow";
+// parent.style.backgroundColor = "yellow";
 // _________________________.children_____________________
 const Celement = document.getElementById("fruits");
 const children = Celement.children;
 console.log(children);
 
-Array.from(children).forEach(child => {
-        child.style.backgroundColor = "red";
-    })
-    // ____________________________________________________
+// Array.from(children).forEach(child => {
+//         child.style.backgroundColor = "red";
+//     })
+// ____________________________________________________
+
+// Add & change HTML Element : 
+// STEP 1 : CREATE ELEMENT 
+// __________________________________________________________
+const H1 = document.createElement("h1");
+// add js code on ordered list 
+const newListItem = document.createElement("li");
+
+// STEP 2 : ADD ATTRIBUTES/PROPERTIES
+// ____________________________________________________
+H1.textContent = "I like pizza";
+H1.id = "myH1";
+H1.style.backgroundColor = "red";
+H1.style.textAlign = "center";
+// applied on list 
+newListItem.textContent = "coconut";
+newListItem.id = "coconut";
+newListItem.style.fontWeight = "bold";
+newListItem.style.backgroundColor = "lightgreen";
+
+
+
+// STEP 3 : APPEND ELEMENT TO DOM
+// _____________________________________________________________________
+// document.body.append(H1);
+// document.body.prepend(H1);
+// document.getElementById("box1").append(H1);
+// document.getElementById("box1").prepend(H1);
+
+// const box2 = document.getElementById("box2");
+// document.body.insertBefore(H1, box2);
+
+// const boxes = document.querySelectorAll(".box");
+// document.body.insertBefore(H1, boxes[1]);
+
+// REMOVE HTML ELEMENT
+// _____________________________________________________________
+// document.getElementById("box1").removeChild(H1);
+
+
 
 
 
