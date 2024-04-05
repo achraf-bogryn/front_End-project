@@ -1908,7 +1908,7 @@ myButton.addEventListener("click", event => {
     // }
 
     if (myImg.style.visibility === "hidden") {
-        myImg.style.display = "visible";
+        myImg.style.visibility = "visible";
         myButton.textContent = "Hide";
     } else {
         myImg.style.visibility = "hidden";
