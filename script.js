@@ -1895,32 +1895,91 @@ const Celement = document.getElementById("fruits");
 // });
 
 // Hide/show HTML
-const myButton = document.getElementById("button");
-const myImg = document.getElementById("myImg");
+// const myButton = document.getElementById("button");
+// const myImg = document.getElementById("myImg");
 
-myButton.addEventListener("click", event => {
-    // if (myImg.style.display === "none") {
-    //     myImg.style.display = "block";
-    //     myButton.textContent = "Hide";
-    // } else {
-    //     myImg.style.display = "none";
-    //     myButton.textContent = "Show"
-    // }
+// myButton.addEventListener("click", event => {
+//     // if (myImg.style.display === "none") {
+//     //     myImg.style.display = "block";
+//     //     myButton.textContent = "Hide";
+//     // } else {
+//     //     myImg.style.display = "none";
+//     //     myButton.textContent = "Show"
+//     // }
 
-    if (myImg.style.visibility === "hidden") {
-        myImg.style.visibility = "visible";
-        myButton.textContent = "Hide";
-    } else {
-        myImg.style.visibility = "hidden";
-        myButton.textContent = "Show"
-    }
+//     if (myImg.style.visibility === "hidden") {
+//         myImg.style.visibility = "visible";
+//         myButton.textContent = "Hide";
+//     } else {
+//         myImg.style.visibility = "hidden";
+//         myButton.textContent = "Show"
+//     }
 
+// });
+
+// _____________________________________________________________
+
+// nodeList = static collection of HTML element by
+//  (id,class,element)
+// can be created by using querySelectorAll() 
+// similiar to an array , but no (map,filter,reduce)
+// Nodelist won't update to automatcally reflect changes
+
+let buttonsN = document.querySelectorAll(".myButtons");
+
+// console.log(buttonsN);
+buttonsN.forEach(button => {
+    button.style.backgroundColor = " green ";
+    button.textContent = "search";
 });
 
+// click event listener 
 
+buttonsN.forEach(button => {
+    button.addEventListener("click", event => {
+        event.target.style.backgroundColor = "red";
+    });
+});
 
+// MOUSEOVER ,MOUSEOUT event listener
 
+buttonsN.forEach(button => {
+    button.addEventListener("mouseover", event => {
+        event.target.style.backgroundColor = "yellow";
+    });
+});
 
+buttonsN.forEach(button => {
+    button.addEventListener("mouseout", event => {
+        event.target.style.backgroundColor = " hsl(205, 100%, 60%)";
+    });
+});
+
+// ADD AN ELEMENT 
+// step 1
+const newButton = document.createElement("button");
+// step 2
+newButton.textContent = "button5";
+newButton.classList = "myButtons";
+// step 3
+document.body.appendChild(newButton);
+// console.log(buttonsN);
+// n console show us 4 in nodelist not add automatically new button
+// that why we need to do this line of command
+buttonsN = document.querySelectorAll(".myButtons");
+console.log(buttonsN);
+
+// Remove an element 
+buttonsN.forEach(button => {
+    button.addEventListener("click", event => {
+        event.target.remove();
+        // now we renove elment but number the element 
+        // inside nodelist not change , that why we neeed 
+        // to do that manuelly
+        buttonsN = document.querySelectorAll(".myButtons");
+        console.log(buttonsN)
+    });
+})
 
 
 

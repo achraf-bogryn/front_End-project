@@ -90,9 +90,10 @@ input {
     text-align: center;
 }
 
-#mybutton {
+
+/* #mybutton {
     font-size: 3rem;
-}
+} */
 
 body {
     margin: 0;
@@ -111,6 +112,17 @@ body {
     position: relative;
 }
 
-#button {
+
+/* #button {
     size: 2rem;
+} */
+
+.myButtons {
+    font-size: 4rem;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    background-color: hsl(205, 100%, 60%);
+    color: white;
 }
