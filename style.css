@@ -117,7 +117,8 @@ body {
     size: 2rem;
 } */
 
-.myButtons {
+
+/* .myButtons {
     font-size: 4rem;
     margin: 10px;
     border: none;
@@ -125,4 +126,49 @@ body {
     padding: 10px 15px;
     background-color: hsl(205, 100%, 60%);
     color: white;
+} */
+
+
+/* #mybutton {
+    font-size: 4rem;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+} */
+
+
+/* we add this class by using classlist in js DOM */
+
+.enabled {
+    background-color: blue;
+    color: white;
+}
+
+
+/* also here new class we add */
+
+.hover {
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.2);
+    font-weight: bold;
+}
+
+#myH1 {
+    font-size: 5rem;
+}
+
+
+/* also here new class we add */
+
+.disabled {
+    background-color: rgb(126, 99, 99);
+    color: hsl(0, 0%, 50%);
+}
+
+.BUTTONS {
+    font-size: 4rem;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
 }
