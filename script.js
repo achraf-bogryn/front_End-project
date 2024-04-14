@@ -1993,76 +1993,119 @@ const Celement = document.getElementById("fruits");
 //   replace(oldClass , newClass )
 //   contains()
 
-const myButton = document.getElementById("mybutton");
-myButton.classList.add("enabled");
-myButton.classList.remove("enabled")
-myButton.addEventListener("mouseover", event => {
-    // replace add and remove by toggle
-    // event.target.classList.add("hover");
-    event.target.classList.toggle("hover");
-});
+// const myButton = document.getElementById("mybutton");
+// myButton.classList.add("enabled");
+// myButton.classList.remove("enabled")
+// myButton.addEventListener("mouseover", event => {
+//     // replace add and remove by toggle
+//     // event.target.classList.add("hover");
+//     event.target.classList.toggle("hover");
+// });
 
-myButton.addEventListener("mouseout", event => {
-    // replace add and remove by toggle
-    // event.target.classList.remove("hover");
-    event.target.classList.toggle("hover");
-});
+// myButton.addEventListener("mouseout", event => {
+//     // replace add and remove by toggle
+//     // event.target.classList.remove("hover");
+//     event.target.classList.toggle("hover");
+// });
 
-myButton.classList.add("enabled");
-myButton.addEventListener("click", event => {
-    if (event.target.classList.contains("disabled")) {
-        // event.target.textContent += "1";
-        event.target.classList.replace("disabled", "enabled");
+// myButton.classList.add("enabled");
+// myButton.addEventListener("click", event => {
+//     if (event.target.classList.contains("disabled")) {
+//         // event.target.textContent += "1";
+//         event.target.classList.replace("disabled", "enabled");
 
-    } else {
-        event.target.classList.replace("enabled", "disabled");
-    }
-});
-const H = document.getElementById("myH1");
-H.classList.add("enabled");
+//     } else {
+//         event.target.classList.replace("enabled", "disabled");
+//     }
+// });
+// const H = document.getElementById("myH1");
+// H.classList.add("enabled");
 
-H.addEventListener("click", event => {
-    if (event.target.classList.contains("disabled")) {
-        event.target.textContent += 1;
+// H.addEventListener("click", event => {
+//     if (event.target.classList.contains("disabled")) {
+//         event.target.textContent += 1;
 
 
-    } else {
-        event.target.classList.replace("enabled", "disabled");
-    }
-});
+//     } else {
+//         event.target.classList.replace("enabled", "disabled");
+//     }
+// });
 
-let BUTT = document.querySelectorAll(".BUTTONS");
-BUTT.forEach(button => {
-    button.classList.add("enabled");
-});
+// let BUTT = document.querySelectorAll(".BUTTONS");
+// BUTT.forEach(button => {
+//     button.classList.add("enabled");
+// });
 
-BUTT.forEach(button => {
-    button.addEventListener("mouseover", event => {
-        event.target.classList.toggle("hover");
+// BUTT.forEach(button => {
+//     button.addEventListener("mouseover", event => {
+//         event.target.classList.toggle("hover");
+//     });
+// });
+
+// BUTT.forEach(button => {
+//     button.addEventListener("mouseout", event => {
+//         event.target.classList.toggle("hover");
+//     });
+// });
+
+// BUTT.forEach(button => {
+//     button.addEventListener("click", event => {
+//         if (event.target.classList.contains("disabled")) {
+//             event.target.classList.replace("disabled", "enabled");
+//         } else {
+//             event.target.classList.replace("enabled", "disabled");
+//         }
+
+//     });
+// });
+
+// ____________________________________________________________
+// callback Hell : Situation in JavaScript where callbacks are
+// nested within other callbacks to the degree where the code 
+// is difficult to read .
+// Old pattern to handle asynchronous functions .
+// use Promises = async/await to avoid callback Hell
+
+function task1(callback) {
+    //  we transform this functions asynchrouns we add 
+    // setTimeout() function 
+    setTimeout(() => {
+        console.log("task 1 it's complet");
+    }, 4000);
+    callback();
+}
+
+function task2(callback) {
+    setTimeout(() => {
+        console.log("task 2 it's complet");
+    }, 3000);
+    callback();
+}
+
+function task3(callback) {
+    setTimeout(() => {
+        console.log("task 3 it's complet");
+    }, 2000);
+    callback();
+}
+
+function task4(callback) {
+    setTimeout(() => {
+        console.log("task 4 it's complet");
+    }, 1000);
+    callback();
+}
+
+
+task1(() => {
+    task2(() => {
+        task3(() => {
+            task4(() => { console.log("all tasks complet") });
+        })
     });
 });
 
-BUTT.forEach(button => {
-    button.addEventListener("mouseout", event => {
-        event.target.classList.toggle("hover");
-    });
-});
-
-BUTT.forEach(button => {
-    button.addEventListener("click", event => {
-        if (event.target.classList.contains("disabled")) {
-            event.target.classList.replace("disabled", "enabled");
-        } else {
-            event.target.classList.replace("enabled", "disabled");
-        }
-
-    });
-});
-
-
-
-
-
+// console.log("all tasks complet");
 
 
 
