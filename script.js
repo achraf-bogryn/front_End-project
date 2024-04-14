@@ -2071,41 +2071,168 @@ function task1(callback) {
     // setTimeout() function 
     setTimeout(() => {
         console.log("task 1 it's complet");
+        callback();
     }, 4000);
-    callback();
+
 }
 
 function task2(callback) {
     setTimeout(() => {
         console.log("task 2 it's complet");
+        callback();
     }, 3000);
-    callback();
+
 }
 
 function task3(callback) {
     setTimeout(() => {
         console.log("task 3 it's complet");
+        callback();
     }, 2000);
-    callback();
 }
 
 function task4(callback) {
     setTimeout(() => {
         console.log("task 4 it's complet");
+        callback();
     }, 1000);
-    callback();
+
 }
 
 
-task1(() => {
-    task2(() => {
-        task3(() => {
-            task4(() => { console.log("all tasks complet") });
-        })
-    });
-});
+// task1(() => {
+//     task2(() => {
+//         task3(() => {
+//             task4(() => { console.log("all tasks complet") });
+//         })
+//     });
+// });
 
 // console.log("all tasks complet");
+
+// ___________________________________________________________
+// Promise : An object that manages asynchrounous operations .
+// wrap a promise object arround {asynchrounous code}
+// "I promise to return a value "
+// PENDING --> RESOLVED or REJECTED 
+// new Promise(resolve , reject )=> {asynchrounous code}
+
+// By using a promis we don't need callback
+
+// DO this CHORSE IN ORDER
+
+// 1. WALK THE DOG
+// 2. CLEAN THE KITCHEN
+// 3. TAKE OUT THE TRASH
+
+// function walkDog(callback) {
+//     setTimeout(() => {
+//         console.log("you walk the dog");
+//         callback();
+//     }, 1500);
+
+// }
+
+// here I will use Promis
+
+function walkDog() {
+    return new Promise((resolve, reject) => {
+        // Now if we want add reject if task it's dailed 
+        // then we use reject with a message
+        setTimeout(() => {
+            const dogWalked = true;
+
+            if (dogWalked) {
+                resolve("you walk the dog");
+            } else {
+                reject("you did not walk the dog");
+            }
+
+        }, 1500);
+    })
+}
+
+// function cleanKitchen(callback) {
+//     setTimeout(() => {
+//         console.log("you clean the kitchen");
+//         callback();
+//     }, 2500);
+
+// }
+
+// here I will use Promis
+
+function cleanKitchen() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const kitchenIsClean = false;
+            if (kitchenIsClean) {
+                resolve("you clean the kitchen");
+            } else {
+
+                reject("you did not clean the kitchen")
+            }
+
+        }, 2500);
+    });
+}
+
+
+// function takeOutTrash(callback) {
+//     setTimeout(() => {
+//         console.log("you take out the trash");
+//         callback();
+//     }, 500);
+
+// }
+
+// here I will use Promis
+
+function takeOutTrash() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const TrashIsTakeOut = true;
+            if (TrashIsTakeOut) {
+                resolve("you take out the trash");
+            } else {
+                reject("you did not take out the trash");
+            }
+
+
+        }, 500);
+    })
+}
+
+// walkDog(() => {
+//     cleanKitchen(() => {
+//         takeOutTrash(() => {
+//             console.log("you fnish all the chores");
+//         });
+//     });
+// });
+
+//  here call function with promise 
+
+walkDog().then(value => {
+    console.log(value);
+    return cleanKitchen()
+}).then(value => {
+    console.log(value);
+    return takeOutTrash()
+}).then(value => {
+    console.log(value);
+    console.log("you finish all chores ")
+}).catch(error => console.error(error));
+
+
+
+
+
+
+
+
+
+
 
 
 
